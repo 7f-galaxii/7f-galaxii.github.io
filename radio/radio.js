@@ -37,6 +37,7 @@ function togglePlaying() {
                 player.load();
             }
         }
+        player.volume = $("#volume").val();
         player.play();
     }
 }
