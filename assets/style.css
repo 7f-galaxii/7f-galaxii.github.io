@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  background-image: url("/assets/background.png");
+  background-size: 100vw 100vh;
+  /*--window-background-color: #70f;*/
+}
+
+.taskbar {
+  background: linear-gradient(rgb(235 235 235 / 80%), rgb(119 119 119 / 80%) 48%, rgb(68 68 68 / 80%) 52%, rgb(20 20 20 / 80%));
+  border-image: repeating-linear-gradient(to top, rgb(255 255 255 / 80%) 0%, rgb(0 0 0 / 40%) 100%) 50;
+  border-top: 3px solid rgb(255 255 255 / 80%);
+  backdrop-filter: blur(2px);
+  width: 100vw;
+  height: 25px;
+  position: fixed;
+  bottom: 0;
+}
+
+.startbutton {
+  background-image: url("/assets/start_button.png");
+  width: 54px;
+  height: 54px;
+  position: relative;
+  bottom: 15px;
+  filter: drop-shadow(0 0 3px black);
+  transition: filter 0.2s ease-out;
+}
+.startbutton:hover {
+  filter: drop-shadow(0 0 3px black) contrast(80%) brightness(125%);
+}
