@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("guytile.png");
+    font-family: Arial, Helvetica, sans-serif;
+    color: #483D8B;
+}
+
+.main {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.radio {
+    background: #f0f0f0;
+    width: 400px;
+    height: auto;
+    line-height: 90%;
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.np-header {
+    font-family: Sans-Serif;
+    font-size: 14pt;
+    font-weight: bold;
+    width: 160px;
+    margin: 0 auto;
+    text-align: center;
+    color: black;   
+    border-radius: 12px;
+    padding: 5px 0;
+    border: 2px solid #556699;
+    background: linear-gradient(#C6D7F7, #FDFDFD, #C6D7F7);
+}
+
+.song-name {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18pt;
+    padding: 10px 8px;
+    line-height: 100%;
+}
+
+.song-artist {
+    font-size: 14pt;
+    padding: 10px 8px;
+}
+
+.game-list {
+    font-style: italic;
+    padding: 10px 8px;
+}
+
+#play-button {
+    border: none;
+    padding-right: 0.8em;
+}
+
+#play-button i {
+    filter: drop-shadow(0 3px 2px rgba(0,0,0,0.4));
+}
