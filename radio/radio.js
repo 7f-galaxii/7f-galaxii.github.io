@@ -2,12 +2,14 @@ var songStarted = Math.floor(Date.now() / 1000);
 var songLength = 999;
 setInterval(updateSongTime, 1000);
 function updateSongTime() {
-    var timeString;
+    var timeString, lengthString;
     var songElapsed = Math.floor(Date.now() / 1000) - songStarted;
+    songElapsed = Math.max(songElapsed, 0);
     timeString = Math.floor(songElapsed/60).toString().padStart(2, '0') + ":" + (songElapsed % 60).toString().padStart(2, '0');
-    timeString += " / ";
-    timeString += Math.floor(songLength/60).toString().padStart(2, '0') + ":" + (songLength % 60).toString().padStart(2, '0');
+    lengthString = Math.floor(songLength/60).toString().padStart(2, '0') + ":" + (songLength % 60).toString().padStart(2, '0');
     $(".song-time").html(timeString);
+    $(".song-length").html(lengthString);
+    $("#time-bar>div").css({"width": (100*(songElapsed/songLength)).toString()+"%"})
 }
 
 var player = document.getElementById('player');
@@ -15,13 +17,25 @@ var isPlaying = true;
 togglePlaying();
 player.onplay = function() { isPlaying = true; $("#play-button").html("<i class=\"fa-2x fa-solid fa-pause\"></i>"); }
 function togglePlaying() {
+    // if (isPlaying) {
+    //     player.src = "";
+    //     isPlaying = false;
+    //     $("#play-button").html("<i class=\"fa-2x fa-solid fa-play\"></i>");
+    // } else {
+    //     player.src = "https://radio.foxgirl.top/listen/fangame_radio/live";
+    //     isPlaying = true;
+    // }
     if (isPlaying == true) {
         player.pause();
         isPlaying = false;
         $("#play-button").html("<i class=\"fa-2x fa-solid fa-play\"></i>");
     } else {
         if (player.buffered.length != 0) {
-            player.currentTime = player.buffered.end(0);
+            if (player.played.length != 0 && player.buffered.end(player.buffered.length - 1) > player.played.end(player.played.length - 1) + 15) { // 15 seconds of delay is acceptable, i think
+                player.currentTime = player.buffered.end(player.buffered.length - 1);
+            } else {
+                player.load();
+            }
         }
         player.play();
     }

@@ -21,12 +21,17 @@
             <div class="song-name">Song Name</div>
             <div class="song-artist">Song Artist</div>
             <div class="game-list">Game List</div>
-            <div class="song-time">00:00 / 99:99</div>
-            
+            <div class="time-container">
+                <div class="song-time">00:00</div>
+                <div id="time-bar"><div></div></div>
+                <div class="song-length">00:00</div>
+            </div>
+            <hr />
             <audio id="player" preload="none" autoplay="autoplay" src="https://radio.foxgirl.top/listen/fangame_radio/live"></audio>
-            <div> 
-                <button id="play-button" onclick="togglePlaying()"></button> 
-                <input type="range" id="volume" name="volume" min="0" max="1" step="0.01" value="0.3" />
+            <div id="radio-controls"> 
+                <button id="play-button" onclick="togglePlaying()"></button>
+                <span>Volume</span>
+                <input type="range" id="volume" name="volume" min="0" max="1" step="0.01" value="0.2" />
             </div>
         </div>
         <!-- requests are currently disabled -->
