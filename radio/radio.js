@@ -71,6 +71,7 @@ function handleSseData(ssePayload, useTime = true) {
     $(".song-name").html(nowplaying.now_playing.song.title);
     $(".song-artist").html("by " + nowplaying.now_playing.song.artist);
     $(".game-list").html("Used in: " + nowplaying.now_playing.song.custom_fields.c_games);
+    document.title = nowplaying.now_playing.song.title + " by " + nowplaying.now_playing.song.artist + " - I Wanna Radio";
     songStarted = nowplaying.now_playing.played_at;
     songLength = nowplaying.now_playing.duration;
 }
