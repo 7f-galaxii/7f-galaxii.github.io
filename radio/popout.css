@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #00000000;
+    font-family: "Figtree", sans-serif;
+    color: #483D8B;
+}
+hr {
+    margin: 8px 0;
+}
+.box {
+    background: linear-gradient(#fdfdfddd, #fdfdfddd), url("bg-texture.png");
+    height: auto;
+    border-radius: 12px;
+    margin: 15px;
+    padding: 12px;
+    box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.5);
+}
+.np-header {
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 0 auto 0;
+    text-align: center;
+    color: black;   
+    border-radius: 12px;
+    padding: 8px;
+    border: 2px solid #556699;
+    background: linear-gradient(#C6D7F7, #FDFDFD, #C6D7F7);
+}
+
+.radio {
+    width: 425px;
+    line-height: 110%;
+    display: flex;
+    flex-direction: column;
+}
+
+.song-name {
+    font-family: "Crimson Text", serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 22pt;
+    padding: 5px 0;
+    line-height: 100%;
+}
+
+.song-artist {
+    font-size: 16pt;
+    padding: 5px 0;
+}
+
+.game-list {
+    font-style: italic;
+    padding: 5px 0;
+    font-size: 16pt;
+    
+}
+.time-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.song-time, .song-length {
+    font-size: 14px;
+    min-width: 40px;
+}
+.song-time {
+    text-align: start;
+}
+.song-length {
+    text-align: end;
+}
+#time-bar {
+    display: flex;
+    background: #556699;
+    vertical-align: center;
+    border-radius: 9.5px;
+    padding: 3px;
+    flex: 1 1 auto;
+}
+
+#time-bar>div {
+    transition: width 1s linear;
+    background: linear-gradient(0deg, #C6D7F7, #FDFDFD, #C6D7F7);
+    /* background: linear-gradient(90deg, #1e88e5bb, #1ec7e599); */
+    border-radius: 7.5px;
+    height: 15px;
+}
